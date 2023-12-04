@@ -1,14 +1,13 @@
 {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "type": "Point",
-                "coordinates": [0, 0]
-            }
-        }
-        // Add more features as needed
-    ]
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Tester B" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.005, 40.71]
+      }
+    }
+  ]
 }
