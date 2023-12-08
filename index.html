@@ -3,17 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Map</title>
+    <title>Editing Branch</title>
     <!-- Include Leaflet CSS and JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="styles.css" /> <!-- Add this line to include your custom styles -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
-    <!-- Create a div to hold the map -->
-    <div id="map" style="height: 600px;"></div>
+    <!-- Create a div to h old the map -->
+    <div id="map"></div>
 
-    <!-- Include your GeoJSON file -->
-    <script src="tester.geojson"></script>
+    <!-- Create a div for the sidebar -->
+<div id="sidebar">
+    <h2>Fuel Type</h2>
+    <!-- Your three selection boxes go here -->
+    <label for="gasFilter">
+        <input type="checkbox" id="gasFilter" onchange="filterMap()"> Gas
+    </label>
+    <br>
+    <label for="oilFilter">
+        <input type="checkbox" id="oilFilter" onchange="filterMap()"> Oil
+    </label>
+    <br>
+    <label for="electricFilter">
+        <input type="checkbox" id="electricFilter" onchange="filterMap()"> Electric
+    </label>
+        <!-- Filtered properties will be displayed here -->
+        <div id="filteredProperties"></div>
+        <h2>Year Built Range</h2>
+        <label for="minYear">Min Year:</label>
+        <input type="number" id="minYear" min="1700" max="2023" value="1700" onchange="filterMap()">
+        <br>
+        <label for="maxYear">Max Year:</label>
+        <input type="number" id="maxYear" min="1700" max="2023" value="2023" onchange="filterMap()">
+</div>
+
 
     <!-- Include your JavaScript file -->
     <script src="script.js"></script>
