@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+#map {
+    height: 100vh;
+    width: calc(100% - 225px); /* Adjust width based on sidebar size */
+    float: left;
+}
+
+#sidebar {
+    height: 100vh;
+    width: 225px;
+    float: right;
+    background-color: #f0f0f0; /* Adjust background color as needed */
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Additional styles for the slider container and value display */
+.slider-container {
+    margin-top: 20px;
+}
+
+/* Style for the slider input */
+.slider {
+    width: 100%;
+}
+
+/* Style for the slider value display */
+#sliderValue {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+}
