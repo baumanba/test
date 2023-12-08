@@ -52,6 +52,7 @@ function initializeMap() {
 initializeMap();
 
 // Function to filter the map based on the selected fuel types and year range
+// Function to filter the map based on the selected fuel types and year range
 function filterMap() {
     // Get the checkbox values
     var gasFilter = document.getElementById('gasFilter').checked;
@@ -74,8 +75,8 @@ function filterMap() {
         var shouldShow =
             ((gasFilter && featureFuelType === 'Gas') ||
             (oilFilter && featureFuelType === 'Oil') ||
-            (electricFilter && featureFuelType === 'Electric') &&
-            (minYear <= featureYearBuilt && featureYearBuilt <= maxYear));
+            (electricFilter && featureFuelType === 'Electric')) &&
+            (minYear <= featureYearBuilt && featureYearBuilt <= maxYear);
 
         if (shouldShow) {
             layer.setStyle({
@@ -94,9 +95,12 @@ function filterMap() {
 
     // Display the selected filters and year range in the sidebar
     var filteredPropertiesDiv = document.getElementById('filteredProperties');
+    var selectedFilters = [];
+    if (gasFilter) selectedFilters.push('Gas');
+    if (oilFilter) selectedFilters.push('Oil');
+    if (electricFilter) selectedFilters.push('Electric');
+    
     filteredPropertiesDiv.innerHTML = 'Selected Filters: ' +
-        (gasFilter ? 'Gas, ' : '') +
-        (oilFilter ? 'Oil, ' : '') +
-        (electricFilter ? 'Electric, ' : '') +
-        '<br>Year Range: ' (minYear === 1700? '' : minYear) + ' - ' + maxYear;
+        (selectedFilters.length > 0 ? selectedFilters.join(', ') : 'None') +
+        '<br>Year Range: ' + (minYear === 1700 ? '' : minYear) + ' - ' + maxYear;
 }
