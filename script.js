@@ -72,10 +72,10 @@ function filterMap() {
         var featureYearBuilt = layer.feature.properties.year_built;
 
         var shouldShow =
-            (gasFilter && featureFuelType === 'Gas') ||
+            ((gasFilter && featureFuelType === 'Gas') ||
             (oilFilter && featureFuelType === 'Oil') ||
             (electricFilter && featureFuelType === 'Electric') &&
-            (minYear <= featureYearBuilt && featureYearBuilt <= maxYear);
+            (minYear <= featureYearBuilt && featureYearBuilt <= maxYear));
 
         if (shouldShow) {
             layer.setStyle({
@@ -98,5 +98,5 @@ function filterMap() {
         (gasFilter ? 'Gas, ' : '') +
         (oilFilter ? 'Oil, ' : '') +
         (electricFilter ? 'Electric, ' : '') +
-        '<br>Year Range: ' + minYear + ' - ' + maxYear;
+        '<br>Year Range: ' (minYear === 1700? '' : minYear) + ' - ' + maxYear;
 }
