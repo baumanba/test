@@ -20,19 +20,10 @@ body {
     box-sizing: border-box;
 }
 
-/* Additional styles for the slider container and value display */
-.slider-container {
-    margin-top: 20px;
-}
-
-/* Style for the slider input */
-.slider {
-    width: 100%;
-}
-
-/* Style for the slider value display */
-#sliderValue {
-    display: block;
-    margin-top: 5px;
-    text-align: center;
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    #sidebar {
+        width: 100%; /* Use 100% width on smaller screens */
+        float: none; /* Remove float for full-width */
+    }
 }
