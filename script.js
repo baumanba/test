@@ -37,7 +37,7 @@ function initializeMap() {
     }).addTo(map);
 
     // Load GeoJSON data and add features to the map
-    fetch('merged_grandview.geojson')
+    fetch('data.geojson')
         .then(response => response.json())
         .then(data => {
             // Add GeoJSON features to the layer
