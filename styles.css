@@ -19,11 +19,3 @@ body {
     padding: 10px;
     box-sizing: border-box;
 }
-
-/* Media query for smaller screens */
-@media (max-width: 600px) {
-    #sidebar {
-        width: 100%; /* Use 100% width on smaller screens */
-        float: none; /* Remove float for full-width */
-    }
-}
